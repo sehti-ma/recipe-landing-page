@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe.ma | Advanced Medical Solutions</title>
-    <!-- Cache busting version for your CSS -->
     <link rel="stylesheet" href="style.css?v=1.1">
-    <!-- hCaptcha Script -->
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
@@ -76,10 +74,7 @@
             <p>Inquire about partnerships, distribution, or our clinical solutions.</p>
 
             <form action="https://api.web3forms.com/submit" method="POST" id="form" class="contact-form">
-                <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="8f1b7977-1657-473f-b7e0-42a3a9d5f2af">
-
-                <!-- Honeypot Spam Protection -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                 <div class="form-group">
@@ -102,14 +97,12 @@
                     <textarea id="message" name="message" rows="5" placeholder="How can we collaborate?" required></textarea>
                 </div>
 
-                <!-- hCaptcha Widget -->
                 <div class="form-group">
                     <div class="h-captcha" data-sitekey="50b2fe65-b00b-47ad-9e8a-328a915f021c"></div>
                 </div>
 
                 <button type="submit" class="btn-primary btn-block">Send Inquiry</button>
 
-                <!-- Submission Result Message -->
                 <div id="result" style="margin-top: 1rem; font-weight: 600;"></div>
             </form>
         </div>
@@ -123,7 +116,6 @@
     </div>
 </footer>
 
-<!-- Form Submission JavaScript -->
 <script>
     const form = document.getElementById('form');
     const result = document.getElementById('result');
@@ -144,25 +136,23 @@
             },
             body: json
         })
-            .then(async (response) => {
-                let res = await response.json();
-                if (response.status == 200) {
-                    result.innerHTML = "Inquiry sent successfully! We will be in touch shortly.";
-                    result.style.color = "#2cb5a5";
-                    form.reset();
-                    // Reset hCaptcha widget
-                    if (typeof hcaptcha !== 'undefined') { hcaptcha.reset(); }
-                } else {
-                    console.log(response);
-                    result.innerHTML = res.message || "Submission failed. Please try again.";
-                    result.style.color = "#ff4d4d";
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                result.innerHTML = "Something went wrong. Please check your connection.";
+        .then(async (response) => {
+            let res = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = "Inquiry sent successfully! We will be in touch shortly.";
+                result.style.color = "#2cb5a5";
+                form.reset();
+                if (typeof hcaptcha !== 'undefined') { hcaptcha.reset(); }
+            } else {
+                result.innerHTML = res.message || "Submission failed. Please try again.";
                 result.style.color = "#ff4d4d";
-            });
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong. Please check your connection.";
+            result.style.color = "#ff4d4d";
+        });
     });
 </script>
 
