@@ -11,7 +11,7 @@
     <header>
         <div class="container nav-bar">
             <div class="logo">Recipe.ma</div>
-            <a href="mailto:mail@domain.com" class="btn-primary">Contact Us</a>
+            <a href="#contact" class="btn-primary">Contact Us</a>
         </div>
     </header>
 
@@ -68,6 +68,35 @@
             <p>&copy; 2026 Recipe.ma. All rights reserved.</p>
             <p>Rabat, Morocco</p>
         </div>
+<section id="contact" class="container">
+    <div class="contact-wrapper">
+        <div class="text-center">
+            <h2>Get in Touch</h2>
+            <p>Inquire about partnerships, distribution, or our clinical solutions.</p>
+        </div>
+        
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Dr. Ahmed Mansouri" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" placeholder="name@company.com" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company / Clinic</label>
+                <input type="text" id="company" name="company" placeholder="Organization Name">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we collaborate?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-block">Send Inquiry</button>
+        </form>
+    </div>
+</section>
+
     </footer>
 
 </body>
