@@ -1,261 +1,170 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /* --- GOOGLE FONT --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe.ma | Advanced Medical Solutions</title>
+    <!-- Cache busting version for your CSS -->
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <!-- hCaptcha Script -->
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body>
 
-/* --- BASE RESET & VARIABLES --- */
-:root {
-    --primary: #2cb5a5;
-    --primary-dark: #249688;
-    --primary-light: #f0fbf9;
-    --text-heading: #1e293b;
-    --text-body: #475569;
-    --bg-white: #ffffff;
-    --bg-gray: #f8fafc;
-    --border-color: #e2e8f0;
-}
+<header>
+    <div class="container nav-bar">
+        <div class="logo">Recipe.ma</div>
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+    </div>
+</header>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Empowering Healthcare Professionals in Morocco</h1>
+            <p>Delivering innovative medical technologies, comprehensive clinical training, and robust practice management solutions to top-tier practitioners.</p>
+        </div>
+    </section>
 
-body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    line-height: 1.6;
-    color: var(--text-body);
-    background-color: var(--bg-white);
-    -webkit-font-smoothing: antialiased;
-}
+    <!-- ABOUT US SECTION -->
+    <section class="about container">
+        <h2>Who We Are</h2>
+        <p>We are a specialized team of medical and technical professionals dedicated to elevating healthcare standards. Operating at the intersection of medical devices and digital management, we bridge the gap between global innovations and local clinical needs.</p>
+    </section>
 
-/* --- TYPOGRAPHY --- */
-h1, h2, h3 {
-    color: var(--text-heading);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-}
+    <!-- EXPERTISE SECTION -->
+    <section class="capabilities bg-light">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="grid-3">
+                <article class="card">
+                    <h3>Distribution & Strategy</h3>
+                    <p>Deep understanding of the Moroccan healthcare landscape, enabling targeted market entry and sustained growth for advanced therapeutic and aesthetic technologies.</p>
+                </article>
+                <article class="card">
+                    <h3>Clinical Education</h3>
+                    <p>Dedicated medical leadership ensuring rigorous scientific training, enabling practitioners to achieve optimal patient outcomes with new technologies.</p>
+                </article>
+                <article class="card">
+                    <h3>Technical & After-Sales</h3>
+                    <p>In-house engineering and support teams providing rapid, reliable maintenance and technical troubleshooting to ensure zero downtime for our partners.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-h1 {
-    font-size: 3rem;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-}
+    <!-- VALUES SECTION -->
+    <section class="values container">
+        <h2>Our Network & Values</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Our Clients</h3>
+                <p>We partner with specialized doctors, high-volume clinics, and leading medical centers. Our clients demand precision, reliability, and continuous support, which forms the baseline of our service standards.</p>
+            </div>
+            <div>
+                <h3>Our Objectives</h3>
+                <p>To be the most trusted conduit for medical innovation in the region. We value uncompromising quality, clinical integrity, and long-term partnerships over short-term transactions.</p>
+            </div>
+        </div>
+    </section>
 
-h2 {
-    font-size: 2.25rem;
-    margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-}
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container">
+        <div class="contact-wrapper">
+            <h2>Get in Touch</h2>
+            <p>Inquire about partnerships, distribution, or our clinical solutions.</p>
 
-/* Adds a sleek teal underline to section headers */
-h2::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 4px;
-    bottom: -8px;
-    left: 0;
-    background-color: var(--primary);
-    border-radius: 2px;
-}
+            <form action="https://api.web3forms.com/submit" method="POST" id="form" class="contact-form">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="8f1b7977-1657-473f-b7e0-42a3a9d5f2af">
 
-p {
-    margin-bottom: 1.25rem;
-    font-size: 1.125rem;
-}
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-/* --- LAYOUT & UTILITIES --- */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-}
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
 
-.bg-light {
-    background-color: var(--bg-gray);
-}
+                <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                </div>
 
-/* --- COMPONENTS --- */
-header {
-    background-color: var(--bg-white);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+                <div class="form-group">
+                    <label for="company">Company / Clinic</label>
+                    <input type="text" id="company" name="company" placeholder="Organization Name">
+                </div>
 
-.nav-bar {
-    padding: 1.25rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we collaborate?" required></textarea>
+                </div>
 
-/* Assuming your logo is text for now, colored with your teal */
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary);
-    letter-spacing: -0.5px;
-}
+                <!-- hCaptcha Widget -->
+                <div class="form-group">
+                    <div class="h-captcha" data-sitekey="50b2fe65-b00b-47ad-9e8a-328a915f021c"></div>
+                </div>
 
-.btn-primary {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--bg-white);
-    padding: 0.875rem 1.75rem;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(44, 181, 165, 0.2); /* Soft teal shadow */
-}
+                <button type="submit" class="btn-primary btn-block">Send Inquiry</button>
 
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(44, 181, 165, 0.3);
-}
+                <!-- Submission Result Message -->
+                <div id="result" style="margin-top: 1rem; font-weight: 600;"></div>
+            </form>
+        </div>
+    </section>
+</main>
 
-/* --- HERO SECTION --- */
-.hero {
-    text-align: center;
-    padding: 7rem 2rem;
-    /* Soft gradient using a very transparent version of your primary color */
-    background: linear-gradient(135deg, var(--bg-white) 0%, var(--primary-light) 100%);
-    border-bottom: 1px solid var(--border-color);
-}
+<footer>
+    <div class="container text-center">
+        <p>&copy; 2026 Recipe.ma. All rights reserved.</p>
+        <p>Rabat, Morocco</p>
+    </div>
+</footer>
 
-.hero h1 {
-    max-width: 800px;
-    margin: 0 auto 1.5rem auto;
-}
+<!-- Form Submission JavaScript -->
+<script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
 
-.hero p {
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    color: var(--text-body);
-}
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        result.innerHTML = "Processing...";
+        result.style.color = "var(--text-body)";
 
-/* --- GRIDS & CARDS --- */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-}
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+            .then(async (response) => {
+                let res = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Inquiry sent successfully! We will be in touch shortly.";
+                    result.style.color = "#2cb5a5";
+                    form.reset();
+                    // Reset hCaptcha widget
+                    if (typeof hcaptcha !== 'undefined') { hcaptcha.reset(); }
+                } else {
+                    console.log(response);
+                    result.innerHTML = res.message || "Submission failed. Please try again.";
+                    result.style.color = "#ff4d4d";
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong. Please check your connection.";
+                result.style.color = "#ff4d4d";
+            });
+    });
+</script>
 
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 4rem;
-}
-
-.card {
-    background: var(--bg-white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--border-color);
-    border-top: 4px solid var(--primary); /* Teal top border accents the card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--text-heading);
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: var(--text-heading);
-    color: #94a3b8;
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-footer p {
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-}
-
-/* --- SMOOTH SCROLLING --- */
-html {
-    scroll-behavior: smooth;
-}
-
-/* --- CONTACT SECTION --- */
-.contact-wrapper {
-    max-width: 600px;
-    margin-top: 2rem;
-}
-
-.contact-form {
-    margin-top: 2rem;
-    background: var(--bg-gray);
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-heading);
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-/* Highlight input with teal when clicking */
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(44, 181, 165, 0.1);
-}
-
-.btn-block {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    padding: 1rem;
-}
-
-/* Adjust section spacing so the anchor doesn't hit the very top edge */
-#contact {
-    scroll-margin-top: 80px; /* Adjust based on your header height */
-}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      /* Ensures the hCaptcha widget doesn't overflow on small mobile screens */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      .h-captcha {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          transform: scale(0.85);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          transform-origin: 0 0;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          margin-bottom: 1rem;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @media (min-width: 400px) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .h-captcha {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              transform: scale(1);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
+</body>
+</html>
