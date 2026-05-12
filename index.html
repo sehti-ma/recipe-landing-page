@@ -98,10 +98,11 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="h-captcha" data-sitekey="50b2fe65-b00b-47ad-9e8a-328a915f021c"></div>
+                    <div class="h-captcha" data-sitekey="50b2fe65-b00b-47ad-9e8a-328a915f021c" data-size="compact" data-theme="light" 
+         data-callback="enableSubmit"></div>
                 </div>
 
-                <button type="submit" class="btn-primary btn-block">Send Inquiry</button>
+                <button type="submit" id="submitBtn" class="btn-primary btn-block" disabled>Send Inquiry</button>
 
                 <div id="result" style="margin-top: 1rem; font-weight: 600;"></div>
             </form>
@@ -154,6 +155,9 @@
             result.style.color = "#ff4d4d";
         });
     });
+    function enableSubmit() {
+    document.getElementById("submitBtn").disabled = false;
+}
 </script>
 
 </body>
