@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe.ma | Advanced Medical Solutions</title>
     <link rel="stylesheet" href="style.css?v=1.1">
-    <script src="https://web3forms.com/client/script.js" async defer></script>
 </head>
 <body>
 
@@ -98,8 +97,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="h-captcha" data-sitekey="8f1b7977-1657-473f-b7e0-42a3a9d5f2af" data-theme="light" 
-         data-callback="enableSubmit"></div>
+                    <div class="h-captcha" data-captcha="true" data-theme="light" data-callback="enableSubmit"></div>
                 </div>
 
                 <button type="submit" id="submitBtn" class="btn-primary btn-block" disabled>Send Inquiry</button>
@@ -116,16 +114,26 @@
         <p>Rabat, Morocco</p>
     </div>
 </footer>
-
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script>
     const form = document.getElementById('form');
     const result = document.getElementById('result');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
+        
+        // 1. Double-check the Captcha is actually solved before fetching
+        if (!object['h-captcha-response']) {
+            result.innerHTML = "Please complete the security check.";
+            result.style.color = "#ff4d4d";
+            return; 
+        }
+
         const json = JSON.stringify(object);
+        
         result.innerHTML = "Processing...";
         result.style.color = "var(--text-body)";
 
@@ -143,7 +151,11 @@
                 result.innerHTML = "Inquiry sent successfully! We will be in touch shortly.";
                 result.style.color = "#2cb5a5";
                 form.reset();
+                
+                // Re-disable button and reset captcha for future submissions
+                document.getElementById("submitBtn").disabled = true;
                 if (typeof hcaptcha !== 'undefined') { hcaptcha.reset(); }
+                
             } else {
                 result.innerHTML = res.message || "Submission failed. Please try again.";
                 result.style.color = "#ff4d4d";
@@ -155,9 +167,12 @@
             result.style.color = "#ff4d4d";
         });
     });
+
+    // Enables the button once the puzzle is solved
     function enableSubmit() {
-    document.getElementById("submitBtn").disabled = false;
-}
+        document.getElementById("submitBtn").disabled = false;
+        result.innerHTML = ""; // Clears any error messages
+    }
 </script>
 
 </body>
